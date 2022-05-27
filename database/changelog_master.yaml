@@ -1,0 +1,1199 @@
+databaseChangeLog:
+- changeSet:
+    id: 1653645425144-1
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: dim_user_role_pkey
+            name: user_role_id
+            type: INTEGER
+        - column:
+            name: user_role_name
+            type: VARCHAR(100)
+        - column:
+            defaultValue: N/D
+            name: user_role_sysname
+            type: VARCHAR(100)
+        schemaName: ufoffice
+        tableName: dim_user_role
+- changeSet:
+    id: 1653645425144-2
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: users_pkey
+            name: user_id
+            type: INTEGER
+        - column:
+            name: username
+            type: VARCHAR(100)
+        - column:
+            name: user_sex
+            type: VARCHAR(1)
+        - column:
+            name: user_birthday
+            type: date
+        - column:
+            name: user_password
+            type: VARCHAR(1000)
+        - column:
+            name: user_fio
+            type: VARCHAR(300)
+        - column:
+            name: user_mail
+            type: VARCHAR(100)
+        - column:
+            name: user_vk
+            type: VARCHAR(100)
+        - column:
+            name: user_tg
+            type: VARCHAR(100)
+        - column:
+            name: user_facebook
+            type: VARCHAR(100)
+        - column:
+            name: user_role_id
+            type: INTEGER
+        - column:
+            name: user_rating
+            type: SMALLINT
+        - column:
+            name: user_image
+            type: VARCHAR(1000)
+        - column:
+            name: user_status
+            type: VARCHAR(200)
+        - column:
+            name: profession_id
+            type: INTEGER
+        - column:
+            name: user_phone
+            type: VARCHAR(100)
+        - column:
+            name: points
+            type: INTEGER
+        schemaName: ufoffice
+        tableName: users
+- changeSet:
+    id: 1653645425144-3
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: dim_achievement_group_pkey
+            name: achievement_group_id
+            type: INTEGER
+        - column:
+            name: achievement_group_name
+            type: VARCHAR(500)
+        schemaName: ufoffice
+        tableName: dim_achievement_group
+- changeSet:
+    id: 1653645425144-4
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: dim_achievement_pkey
+            name: achievement_id
+            type: INTEGER
+        - column:
+            name: achievement_name
+            type: VARCHAR(100)
+        - column:
+            name: achievement_desc
+            type: VARCHAR(250)
+        - column:
+            name: achievement_end_point
+            type: SMALLINT
+        - column:
+            name: achievement_group_id
+            type: INTEGER
+        - column:
+            name: achievement_image
+            type: VARCHAR(500)
+        schemaName: ufoffice
+        tableName: dim_achievement
+- changeSet:
+    id: 1653645425144-5
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: dim_profession_pkey
+            name: profession_id
+            type: INTEGER
+        - column:
+            name: profession_name
+            type: VARCHAR(200)
+        schemaName: ufoffice
+        tableName: dim_profession
+- changeSet:
+    id: 1653645425144-6
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: dim_orgatization_type_pkey
+            name: org_type_id
+            type: INTEGER
+        - column:
+            name: org_type_name
+            type: VARCHAR(200)
+        schemaName: ufoffice
+        tableName: dim_orgatization_type
+- changeSet:
+    id: 1653645425144-7
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: organization_pkey
+            name: org_id
+            type: INTEGER
+        - column:
+            name: org_type_id
+            type: INTEGER
+        - column:
+            name: org_name
+            type: VARCHAR(100)
+        - column:
+            name: legal_entity
+            type: VARCHAR(150)
+        - column:
+            name: org_desc
+            type: VARCHAR(300)
+        - column:
+            name: org_image
+            type: VARCHAR(1500)
+        schemaName: ufoffice
+        tableName: organization
+- changeSet:
+    id: 1653645425144-8
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: team_pkey
+            name: team_id
+            type: INTEGER
+        - column:
+            name: org_id
+            type: INTEGER
+        - column:
+            name: team_name
+            type: VARCHAR(100)
+        - column:
+            name: team_desc
+            type: VARCHAR(300)
+        - column:
+            name: team_image
+            type: VARCHAR(1500)
+        schemaName: ufoffice
+        tableName: team
+- changeSet:
+    id: 1653645425144-9
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: map_team_participants_pkey
+            name: team_prt_id
+            type: INTEGER
+        - column:
+            name: user_id
+            type: INTEGER
+        - column:
+            name: team_id
+            type: INTEGER
+        schemaName: ufoffice
+        tableName: map_team_participants
+- changeSet:
+    id: 1653645425144-10
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: dim_skill_group_pkey
+            name: skill_group_id
+            type: INTEGER
+        - column:
+            name: skill_group_name
+            type: VARCHAR(100)
+        schemaName: ufoffice
+        tableName: dim_skill_group
+- changeSet:
+    id: 1653645425144-11
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: dim_skill_pkey
+            name: skill_id
+            type: INTEGER
+        - column:
+            name: skill_group_id
+            type: INTEGER
+        - column:
+            name: skill_name
+            type: VARCHAR(100)
+        - column:
+            name: skill_img
+            type: VARCHAR(1500)
+        schemaName: ufoffice
+        tableName: dim_skill
+- changeSet:
+    id: 1653645425144-12
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: fct_user_skills_pkey
+            name: user_skill_id
+            type: INTEGER
+        - column:
+            name: user_id
+            type: INTEGER
+        - column:
+            name: skill_id
+            type: INTEGER
+        schemaName: ufoffice
+        tableName: fct_user_skills
+- changeSet:
+    id: 1653645425144-13
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: dim_calendar_pkey
+            name: date_id
+            type: INTEGER
+        - column:
+            name: date_value
+            type: date
+        - column:
+            name: day_num
+            type: INTEGER
+        - column:
+            name: month_num
+            type: INTEGER
+        - column:
+            name: year_num
+            type: INTEGER
+        - column:
+            name: month_name
+            type: VARCHAR(20)
+        schemaName: ufoffice
+        tableName: dim_calendar
+- changeSet:
+    id: 1653645425144-14
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: dim_task_status_name_pkey
+            name: task_status_name_id
+            type: INTEGER
+        - column:
+            name: task_status_name
+            type: VARCHAR(100)
+        - column:
+            name: task_status_sysname
+            type: VARCHAR(100)
+        schemaName: ufoffice
+        tableName: dim_task_status_name
+- changeSet:
+    id: 1653645425144-15
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: fct_task_pkey
+            name: task_id
+            type: INTEGER
+        - column:
+            name: task_name
+            type: VARCHAR(200)
+        - column:
+            defaultValueComputed: now()
+            name: create_dttm
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            defaultValueComputed: now()
+            name: last_upd_dttm
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: task_desc
+            type: VARCHAR(1000)
+        - column:
+            name: end_dt
+            type: date
+        - column:
+            name: task_status_name_id
+            type: INTEGER
+        - column:
+            name: ach_pts
+            type: INTEGER
+        schemaName: ufoffice
+        tableName: fct_task
+- changeSet:
+    id: 1653645425144-16
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: map_user_tasks_pkey
+            name: user_task_id
+            type: INTEGER
+        - column:
+            name: user_id
+            type: INTEGER
+        - column:
+            name: task_id
+            type: INTEGER
+        schemaName: ufoffice
+        tableName: map_user_tasks
+- changeSet:
+    id: 1653645425144-17
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: fct_notes_pkey
+            name: note_id
+            type: INTEGER
+        - column:
+            defaultValueComputed: '''new note ''::text || nextval(''ufoffice.new_notes_seq''::regclass)'
+            name: note_header
+            type: VARCHAR(500)
+        - column:
+            name: note_body
+            type: VARCHAR(15000)
+        - column:
+            name: user_id
+            type: INTEGER
+        - column:
+            defaultValueComputed: now()
+            name: updated_dttm
+            type: TIMESTAMP WITHOUT TIME ZONE
+        schemaName: ufoffice
+        tableName: fct_notes
+- changeSet:
+    id: 1653645425144-18
+    author: ichetverikov (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 1
+        maxValue: 9223372036854775807
+        minValue: 1
+        schemaName: ufoffice
+        sequenceName: new_notes_seq
+        startValue: 1
+- changeSet:
+    id: 1653645425144-19
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: fct_user_achievement_pkey
+            name: user_achievement_id
+            type: INTEGER
+        - column:
+            name: user_id
+            type: INTEGER
+        - column:
+            name: achievement_id
+            type: INTEGER
+        - column:
+            name: progress
+            type: INTEGER
+        - column:
+            defaultValueBoolean: false
+            name: ach_status
+            type: BOOLEAN
+        schemaName: ufoffice
+        tableName: fct_user_achievement
+- changeSet:
+    id: 1653645425144-20
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: dim_item_pkey
+            name: item_id
+            type: INTEGER
+        - column:
+            name: item_name
+            type: VARCHAR(500)
+        - column:
+            name: price
+            type: INTEGER
+        - column:
+            name: org_id
+            type: INTEGER
+        - column:
+            name: image
+            type: VARCHAR(500)
+        - column:
+            name: document_id
+            type: INTEGER
+        schemaName: ufoffice
+        tableName: dim_item
+- changeSet:
+    id: 1653645425144-21
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: fct_item_purchase_pkey
+            name: note_id
+            type: INTEGER
+        - column:
+            name: item_id
+            type: INTEGER
+        - column:
+            name: user_id
+            type: INTEGER
+        - column:
+            defaultValueComputed: now()
+            name: purchase_dttm
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            defaultValueNumeric: 1
+            name: quantity
+            type: INTEGER
+        schemaName: ufoffice
+        tableName: fct_item_purchase
+- changeSet:
+    id: 1653645425144-22
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: fct_chat_history_pkey
+            name: note_id
+            type: INTEGER
+        - column:
+            name: from_user_id
+            type: INTEGER
+        - column:
+            name: to_user_id
+            type: INTEGER
+        - column:
+            defaultValueComputed: now()
+            name: message_dttm
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: message_text
+            type: TEXT
+        schemaName: ufoffice
+        tableName: fct_chat_history
+- changeSet:
+    id: 1653645425144-23
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: dim_document_type_pkey
+            name: document_type_id
+            type: INTEGER
+        - column:
+            name: document_type_name
+            type: VARCHAR(100)
+        schemaName: ufoffice
+        tableName: dim_document_type
+- changeSet:
+    id: 1653645425144-24
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: fct_document_folder_pkey
+            name: folder_id
+            type: INTEGER
+        - column:
+            name: parent_folder_id
+            type: INTEGER
+        - column:
+            name: folder_name
+            type: VARCHAR(100)
+        - column:
+            defaultValueComputed: now()
+            name: created_dttm
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: org_id
+            type: INTEGER
+        schemaName: ufoffice
+        tableName: fct_document_folder
+- changeSet:
+    id: 1653645425144-25
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: fct_document_pkey
+            name: document_id
+            type: INTEGER
+        - column:
+            defaultValueComputed: '''New item ''::text || nextval(''ufoffice.new_doc_seq''::regclass)'
+            name: document_name
+            type: VARCHAR(100)
+        - column:
+            name: document_path
+            type: VARCHAR(400)
+        - column:
+            name: document_type_id
+            type: INTEGER
+        - column:
+            name: inner_document_text
+            type: JSONB
+        - column:
+            name: uploaded_by
+            type: INTEGER
+        schemaName: ufoffice
+        tableName: fct_document
+- changeSet:
+    id: 1653645425144-26
+    author: ichetverikov (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 1
+        maxValue: 9223372036854775807
+        minValue: 1
+        schemaName: ufoffice
+        sequenceName: new_doc_seq
+        startValue: 1
+- changeSet:
+    id: 1653645425144-27
+    author: ichetverikov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: map_folder_document_pkey
+            name: folder_doc_id
+            type: INTEGER
+        - column:
+            name: folder_id
+            type: INTEGER
+        - column:
+            name: document_id
+            type: INTEGER
+        schemaName: ufoffice
+        tableName: map_folder_document
+- changeSet:
+    id: 1653645425144-28
+    author: ichetverikov (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: username
+        constraintName: users_username_key
+        schemaName: ufoffice
+        tableName: users
+- changeSet:
+    id: 1653645425144-29
+    author: ichetverikov (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 1
+        maxValue: 9223372036854775807
+        minValue: 1
+        schemaName: ufoffice
+        sequenceName: new_folder_seq
+        startValue: 1
+- changeSet:
+    id: 1653645425144-30
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: achievement_group_id
+        baseTableName: dim_achievement
+        baseTableSchemaName: ufoffice
+        constraintName: dim_achievement_achievement_group_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: achievement_group_id
+        referencedTableName: dim_achievement_group
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-31
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: document_id
+        baseTableName: dim_item
+        baseTableSchemaName: ufoffice
+        constraintName: dim_item_fk
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: document_id
+        referencedTableName: fct_document
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-32
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: org_id
+        baseTableName: dim_item
+        baseTableSchemaName: ufoffice
+        constraintName: dim_item_org_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: org_id
+        referencedTableName: organization
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-33
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: skill_group_id
+        baseTableName: dim_skill
+        baseTableSchemaName: ufoffice
+        constraintName: dim_skill_skill_group_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: skill_group_id
+        referencedTableName: dim_skill_group
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-34
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: from_user_id
+        baseTableName: fct_chat_history
+        baseTableSchemaName: ufoffice
+        constraintName: fct_chat_history_from_user_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: user_id
+        referencedTableName: users
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-35
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: to_user_id
+        baseTableName: fct_chat_history
+        baseTableSchemaName: ufoffice
+        constraintName: fct_chat_history_to_user_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: user_id
+        referencedTableName: users
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-36
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: document_type_id
+        baseTableName: fct_document
+        baseTableSchemaName: ufoffice
+        constraintName: fct_document_document_type_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: document_type_id
+        referencedTableName: dim_document_type
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-37
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: org_id
+        baseTableName: fct_document_folder
+        baseTableSchemaName: ufoffice
+        constraintName: fct_document_folder_org_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: org_id
+        referencedTableName: organization
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-38
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: uploaded_by
+        baseTableName: fct_document
+        baseTableSchemaName: ufoffice
+        constraintName: fct_document_uploaded_by_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: user_id
+        referencedTableName: users
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-39
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: item_id
+        baseTableName: fct_item_purchase
+        baseTableSchemaName: ufoffice
+        constraintName: fct_item_purchase_item_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: item_id
+        referencedTableName: dim_item
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-40
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: fct_item_purchase
+        baseTableSchemaName: ufoffice
+        constraintName: fct_item_purchase_user_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: user_id
+        referencedTableName: users
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-41
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: fct_notes
+        baseTableSchemaName: ufoffice
+        constraintName: fct_notes_user_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: user_id
+        referencedTableName: users
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-42
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: task_status_name_id
+        baseTableName: fct_task
+        baseTableSchemaName: ufoffice
+        constraintName: fct_task_task_status_name_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: task_status_name_id
+        referencedTableName: dim_task_status_name
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-43
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: achievement_id
+        baseTableName: fct_user_achievement
+        baseTableSchemaName: ufoffice
+        constraintName: fct_user_achievement_achievement_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: achievement_id
+        referencedTableName: dim_achievement
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-44
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: fct_user_achievement
+        baseTableSchemaName: ufoffice
+        constraintName: fct_user_achievement_user_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: user_id
+        referencedTableName: users
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-45
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: skill_id
+        baseTableName: fct_user_skills
+        baseTableSchemaName: ufoffice
+        constraintName: fct_user_skills_skill_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: skill_id
+        referencedTableName: dim_skill
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-46
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: fct_user_skills
+        baseTableSchemaName: ufoffice
+        constraintName: fct_user_skills_user_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: user_id
+        referencedTableName: users
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-47
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: document_id
+        baseTableName: map_folder_document
+        baseTableSchemaName: ufoffice
+        constraintName: map_folder_document_document_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: document_id
+        referencedTableName: fct_document
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-48
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: folder_id
+        baseTableName: map_folder_document
+        baseTableSchemaName: ufoffice
+        constraintName: map_folder_document_folder_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: folder_id
+        referencedTableName: fct_document_folder
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-49
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: team_id
+        baseTableName: map_team_participants
+        baseTableSchemaName: ufoffice
+        constraintName: map_team_participants_team_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: team_id
+        referencedTableName: team
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-50
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: map_team_participants
+        baseTableSchemaName: ufoffice
+        constraintName: map_team_participants_user_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: user_id
+        referencedTableName: users
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-51
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: task_id
+        baseTableName: map_user_tasks
+        baseTableSchemaName: ufoffice
+        constraintName: map_user_tasks_task_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: task_id
+        referencedTableName: fct_task
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-52
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: map_user_tasks
+        baseTableSchemaName: ufoffice
+        constraintName: map_user_tasks_user_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: user_id
+        referencedTableName: users
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-53
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: org_type_id
+        baseTableName: organization
+        baseTableSchemaName: ufoffice
+        constraintName: organization_org_type_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: org_type_id
+        referencedTableName: dim_orgatization_type
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-54
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: org_id
+        baseTableName: team
+        baseTableSchemaName: ufoffice
+        constraintName: team_org_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: org_id
+        referencedTableName: organization
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-55
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: profession_id
+        baseTableName: users
+        baseTableSchemaName: ufoffice
+        constraintName: users_profession_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: profession_id
+        referencedTableName: dim_profession
+        referencedTableSchemaName: ufoffice
+        validate: true
+- changeSet:
+    id: 1653645425144-56
+    author: ichetverikov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_role_id
+        baseTableName: users
+        baseTableSchemaName: ufoffice
+        constraintName: users_user_role_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: user_role_id
+        referencedTableName: dim_user_role
+        referencedTableSchemaName: ufoffice
+        validate: true
+

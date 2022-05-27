@@ -1,0 +1,22 @@
+overload:
+  enabled: true
+  package: yandextank.plugins.DataUploader
+  token_file: "token.txt"
+phantom:
+  address: 26.228.23.73:8000
+  ammofile: ./ammo.txt
+  ammo_type: phantom
+  header_http: "1.1"
+  instances: 200
+  load_profile:
+    load_type: rps
+    schedule: line(1,200000,20m) const(200000,20m) line(200000,1,20m)
+autostop:
+  autostop:
+    - time(3000, 10s)
+    - net(110, 5%, 10s)
+    - http(401, 1%, 10s)
+telegraf:
+  enabled: false
+console:
+  enabled: true

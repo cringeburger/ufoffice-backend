@@ -1,0 +1,20 @@
+# python cache files
+__pycache__/
+
+# python environment
+env/
+.env
+
+# local liquibase update properties
+liquibase.properties
+
+# vscode settings
+.vscode
+
+# static files
+static/*
+!static/.gitkeep
+
+# test files
+test.py
+templates/chat*
