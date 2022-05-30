@@ -4,10 +4,10 @@
 
 ### 1. Настройка
 
-> ** .env**
+> .env
 
 ```
-PYTHON_AD=C:/Users/ichetverikov/Desktop/дпилом/ufoffice
+PYTHON_AD=C:/Users/
 
 DB_USER=postgres
 DB_PASSWORD=postgres
